@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_53478_customer_d.JSONG</api_name>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>JSONG</name>
+        <script><![CDATA[var JSONG = Class.create();
+
+JSONG.prototype = Object.extendsObject(JSON, {
+  encodeGr : function(o) {
+    var a = ["{"], b, i, v;
+
+    for (i in o) {
+        if(o.hasOwnProperty(i)) {
+            v = o[i].toString();
+
+            switch (typeof v) {
+                case "undefined":
+                case "function":
+                case "unknown":
+                     break;
+                default:
+                     if (b) {
+                         a.push(',');
+                     }
+                     a.push(this.encode(i), ":", v === null ? "null" : this.encode(v));
+                     b = true;
+            }
+        }
+    }
+
+    a.push("}");
+    return a.join("");
+  }
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-26 19:25:04</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>520c55e84f6d6200ebb6be218110c788</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>JSONG</sys_name>
+        <sys_package display_value="Customer Data" source="x_53478_customer_d">679d17f34f9d2200ebb6be218110c7b0</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Customer Data">679d17f34f9d2200ebb6be218110c7b0</sys_scope>
+        <sys_update_name>sys_script_include_520c55e84f6d6200ebb6be218110c788</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-08-26 19:25:04</sys_updated_on>
+    </sys_script_include>
+</record_update>

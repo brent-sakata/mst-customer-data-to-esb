@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element attributes=",text_index_translations" create_roles="user_admin" label="Company" max_length="40" name="core_company" text_index="true" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="x_53478_customer_d_trendcustomerid" max_length="40" name="x_53478_customer_d_trendcustomerid" type="string"/>
+    </element>
+</database>
